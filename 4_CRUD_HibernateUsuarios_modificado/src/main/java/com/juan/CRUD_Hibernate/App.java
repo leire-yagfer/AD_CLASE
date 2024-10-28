@@ -2,11 +2,11 @@ package com.juan.CRUD_Hibernate;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.sql.Date;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Iterator;
-import java.util.List;
+
+
 
 import com.juan.dao.UserDao;
 import com.juan.dao.UserDaoImpl;
@@ -24,7 +24,7 @@ public class App {
 
 
 		UserDaoImpl dao = new UserDaoImpl();
-		//0 bien de esta otra forma. Mira que el tipo de objeto puede ser de tipo Interface.
+		//o bien de esta otra forma. Mira que el tipo de objeto puede ser de tipo Interface, pero después de new hayq ue poner la clase que usa la BD, no el interface
 		UserDao dao1=new UserDaoImpl();
 		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 		while (true) {
