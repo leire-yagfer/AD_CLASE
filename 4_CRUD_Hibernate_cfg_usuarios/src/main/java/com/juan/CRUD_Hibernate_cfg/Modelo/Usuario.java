@@ -11,7 +11,9 @@ public class Usuario {
     @Id                    // Marca el campo como la clave de la tabla
     //Se basa en una columna de base de datos con incremento automático y
     // permite que la base de datos genere un nuevo valor con cada operación de inserción
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+
+
+    @GeneratedValue(strategy= GenerationType.IDENTITY) //al poner esta linea --> genera el id del usuario
 
     @Column(name="id")
     private int id;

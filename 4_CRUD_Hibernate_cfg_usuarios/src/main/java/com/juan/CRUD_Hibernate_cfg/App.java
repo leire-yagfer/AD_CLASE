@@ -55,7 +55,7 @@ public class App
 
          
          //buscar profesor
-     Profesor profesor_aux=DAOProfesor.buscarProfesor(session,102);
+        Profesor profesor_aux=DAOProfesor.buscarProfesor(session,102);
 
 
          //MODIFICAR
@@ -91,7 +91,7 @@ public class App
         DAOUsuario.modificarUsuario(session,usuario_aux);
 
         //BORRAR USUARIO
-       DAOUsuario.borrarUsuario(session,usuario2);
+        DAOUsuario.borrarUsuario(session,usuario2);
 
 
         //consulta USUARIO

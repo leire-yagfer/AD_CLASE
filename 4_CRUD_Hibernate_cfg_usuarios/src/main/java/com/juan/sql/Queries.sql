@@ -8,9 +8,13 @@ CREATE TABLE  usuario (
   fechaNacimiento   date DEFAULT NULL
 
 )AUTO_INCREMENT=50;
+
+
 /*
-OJO he añadido el AUTO_INCREMENT para este ejercicio
+OJO he añadido el AUTO_INCREMENT para este ejercicio --> se va sumando de 50 en 50
 */
+
+
 CREATE TABLE  profesor (
   id integer NOT NULL PRIMARY KEY,
   nombre varchar(50) DEFAULT NULL,
