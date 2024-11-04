@@ -52,13 +52,23 @@ public class Arma {
 	private List<Personaje> personajes;//un arma puede ser utilizada  por muchos personajes
 	
 	public Arma() {}
-	
+
+	//aunque ponga el id como requisito en el constructor, cada uno tendra su id autogenerado -->
+		//1. se puede crear un nuevo constructor para que no de error en la creación de nuevos objetos de la clase // UTILIZO ESTA
+		//2. quitar el id del constructor
 	public Arma(int id_arma, String nombre, String descripcion, int dano) {
 		super();
 		this.id_arma = id_arma;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.dano = dano;
+	}
+
+	public Arma(String nombre, String descripcion, int dano, List<Personaje> personajes) {
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.dano = dano;
+		this.personajes = personajes;
 	}
 
 	public int getId() {

@@ -2,7 +2,7 @@ DROP DATABASE hibernate_relacion_1an;
 CREATE DATABASE hibernate_relacion_1an;
 USE hibernate_relacion_1an;
 
-CREATE TABLE IF NOT EXISTS armas (
+CREATE TABLE armas (
   id_arma integer unsigned NOT NULL AUTO_INCREMENT,
   nombre varchar(500) NOT NULL,
   descripcion varchar(500) DEFAULT NULL,
@@ -18,7 +18,7 @@ INSERT INTO armas (id_arma, nombre, descripcion, dano) VALUES
 
 
 
-CREATE TABLE IF NOT EXISTS personaje (
+CREATE TABLE personaje (
   id_personaje integer unsigned NOT NULL AUTO_INCREMENT,
   nombre varchar(500) NOT NULL,
   nivel integer unsigned DEFAULT '10',
@@ -37,3 +37,8 @@ INSERT INTO personaje (id_personaje, nombre, nivel, energia, puntos, id_arma) VA
 (4, 'Capitán América', 450, 120, 150, 1),
 (5, 'Iron Man', 300, 100, 50, 2),
 (6, 'Thor', 850, 160, 225, 2);
+
+
+
+-- Relación (1,1) hacia arma (un personaje solo tiene un arma) y (1,n) hacia personaje (varios personajes pueden utilizar un mismo arma)
+    --> pongo un atributo de la clase Arma en Personaje y una lista con todos los personajes en la clase Arma pq es la que tiene la n en la relación

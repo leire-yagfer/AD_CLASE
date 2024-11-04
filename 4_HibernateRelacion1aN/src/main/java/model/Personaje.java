@@ -49,9 +49,11 @@ señala que el campo al que se hace referencia debe ser serializable
 	
 	// Constructor vacío. Hibernate puede mostrar algún error si no está implementado
 	public Personaje() {}
-	
-	public Personaje(int id_personaje, String nombre, int nivel, int energia, int puntos, Arma arma) {
-		this.id_personaje = id_personaje;
+
+	//aunque ponga el id como requisito en el constructor, cada uno tendra su id autogenerado -->
+		//1. se puede crear un nuevo constructor para que no de error en la creación de nuevos objetos de la clase
+		//2. quitar el id del constructor // UTILIZO ESTA
+	public Personaje(String nombre, int nivel, int energia, int puntos, Arma arma) {
 		this.nombre = nombre;
 		this.nivel = nivel;
 		this.energia = energia;
