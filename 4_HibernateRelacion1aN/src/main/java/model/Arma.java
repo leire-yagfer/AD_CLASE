@@ -49,6 +49,7 @@ public class Arma {
 	//https://www.baeldung.com/jpa-cascade-types
 	
 	@OneToMany(mappedBy = "arma", cascade = CascadeType.ALL)
+	//mappedBy = "arma" indica que la relación está mapeada desde el atributo arma de la clase Personaje
 	private List<Personaje> personajes;//un arma puede ser utilizada  por muchos personajes
 	
 	public Arma() {}
