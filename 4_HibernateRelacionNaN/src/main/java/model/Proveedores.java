@@ -101,4 +101,11 @@ public class Proveedores {
 				+ poblacion + "]";
 	}
 
+	public void addProducto(Productos producto) {
+		if (productos == null) {
+			productos = new ArrayList<Productos>();
+		}
+		productos.add(producto);
+	}
+
 }

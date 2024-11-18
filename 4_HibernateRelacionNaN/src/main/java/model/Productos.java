@@ -120,5 +120,14 @@ public class Productos {
 				+ ", stock=" + stock +", categor�a="+categoria+"]";
 	}
 
+	public void addProveedor(Proveedores proveedor) {
+		if (proveedores == null) {
+			proveedores = new ArrayList<Proveedores>();
+			//mas eficiente utilizando set
+			//private Set<Proveedores> proveedores=new HashSet();
+		}
+		proveedores.add(proveedor);
+	}
+
 
 }
