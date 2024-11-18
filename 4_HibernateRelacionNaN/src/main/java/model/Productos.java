@@ -20,6 +20,7 @@ import javax.persistence.Table;
 @Table(name = "productos")
 public class Productos {
 
+	//ATRIBUTOS
 	@Id
 	@Column(name = "idproducto")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -48,8 +49,9 @@ public class Productos {
 	inverseJoinColumns = @JoinColumn(name="idproveedor"))
 	private List<Proveedores> proveedores;
 
-	//constructores
 
+
+	//CONSTRUCTOR
 	public Productos() {
 
 	}
@@ -61,7 +63,9 @@ public class Productos {
 		this.stock = stock;
 	}
 
-//metodos get y set
+
+
+	//GETTER Y SETTER
 	public Categorias getCategoria() {
 		return categoria;
 	}
@@ -77,9 +81,6 @@ public class Productos {
 	public void setProvedores(List<Proveedores> proveedores) {
 		this.proveedores = proveedores;
 	}
-
-
-
 
 	public int getIdproducto() {
 		return idproducto;
@@ -114,6 +115,8 @@ public class Productos {
 	}
 
 
+
+	//TOSTRING
 	@Override
 	public String toString() {
 		return "Productos [idproducto=" + idproducto + ", nombre=" + nombre + ", descripcion=" + descripcion
@@ -127,7 +130,5 @@ public class Productos {
 			//private Set<Proveedores> proveedores=new HashSet();
 		}
 		proveedores.add(proveedor);
-	}
-
-
+	}//addProveedor
 }

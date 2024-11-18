@@ -19,93 +19,101 @@ import javax.persistence.Table;
 @Table(name = "proveedores")
 public class Proveedores {
 
-	@Id
-	@Column(name = "idproveedor")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idproveedor;
+	//ATRIBUTOS
+    @Id
+    @Column(name = "idproveedor")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idproveedor;
 
-	@Column(name = "nombre")
-	private String nombre;
+    @Column(name = "nombre")
+    private String nombre;
 
-	@Column(name = "nif")
-	private String nif;
+    @Column(name = "nif")
+    private String nif;
 
-	@Column(name = "poblacion")
-	private String poblacion;
-//OJO la siguieente definicion va toda juna
-		@ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
-				CascadeType.REFRESH }, fetch = FetchType.LAZY)
-		@JoinTable(name = "producto_proveedor", 
-		joinColumns = @JoinColumn(name="idproveedor"), 
-		inverseJoinColumns = @JoinColumn(name="idproducto"))
-		private List<Productos> productos;
-	
+    @Column(name = "poblacion")
+    private String poblacion;
 
-	
-//constructores
+    //OJO la siguiente definición va toda juna
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
+            CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @JoinTable(name = "producto_proveedor", //columna que se me crea con la relación
+            joinColumns = @JoinColumn(name = "idproveedor"),
+            inverseJoinColumns = @JoinColumn(name = "idproducto"))
+    private List<Productos> productos;
 
-	public Proveedores() {
 
-	}
 
-	public Proveedores(String nombre, String nif, String poblacion) {
-		super();
-		this.nombre = nombre;
-		this.nif = nif;
-		this.poblacion = poblacion;
-	}
-//metodos get y set
-	public List<Productos> getProductos() {
-		return productos;
-	}
+	//CONSTRUCTOR
+    public Proveedores() {
 
-	public void setProductos(List<Productos> productos) {
-		this.productos = productos;
-	}
+    }
 
-	public int getIdproveedor() {
-		return idproveedor;
-	}
+    public Proveedores(String nombre, String nif, String poblacion) {
+        super();
+        this.nombre = nombre;
+        this.nif = nif;
+        this.poblacion = poblacion;
+    }
 
-	public void setIdproveedor(int idproveedor) {
-		this.idproveedor = idproveedor;
-	}
+    //GETTER Y SETTER
+    public List<Productos> getProductos() {
+        return productos;
+    }
 
-	public String getNombre() {
-		return nombre;
-	}
+    public void setProductos(List<Productos> productos) {
+        this.productos = productos;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public int getIdproveedor() {
+        return idproveedor;
+    }
 
-	public String getNif() {
-		return nif;
-	}
+    public void setIdproveedor(int idproveedor) {
+        this.idproveedor = idproveedor;
+    }
 
-	public void setNif(String nif) {
-		this.nif = nif;
-	}
+    public String getNombre() {
+        return nombre;
+    }
 
-	public String getPoblacion() {
-		return poblacion;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public void setPoblacion(String poblacion) {
-		this.poblacion = poblacion;
-	}
+    public String getNif() {
+        return nif;
+    }
 
-	@Override
-	public String toString() {
-		return "Proveedores [idproveedor=" + idproveedor + ", nombre=" + nombre + ", nif=" + nif + ", poblacion="
-				+ poblacion + "]";
-	}
+    public void setNif(String nif) {
+        this.nif = nif;
+    }
 
-	public void addProducto(Productos producto) {
-		if (productos == null) {
-			productos = new ArrayList<Productos>();
-		}
-		productos.add(producto);
-	}
+    public String getPoblacion() {
+        return poblacion;
+    }
+
+    public void setPoblacion(String poblacion) {
+        this.poblacion = poblacion;
+    }
+
+
+
+	//TOSTRING
+    @Override
+    public String toString() {
+        return "Proveedores [idproveedor=" + idproveedor + ", nombre=" + nombre + ", nif=" + nif + ", poblacion="
+                + poblacion + "]";
+    }
+
+
+
+
+    public void addProducto(Productos producto) {
+        if (productos == null) {
+            productos = new ArrayList<Productos>();
+        }
+        productos.add(producto);
+    }//addProducto
 
 }

@@ -17,6 +17,7 @@ import javax.persistence.Table;
 @Table(name = "categorias")
 public class Categorias {
 
+	//ATRIBUTOS
 	@Id
 	@Column(name = "idcategoria")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -39,6 +40,8 @@ public class Categorias {
 	}
 
 
+
+	//CONSTRUCTOR
 	public Categorias() {
 
 	}
@@ -48,6 +51,9 @@ public class Categorias {
 		this.nombre = nombre;
 	}
 
+
+
+	//GETTER Y SETTER
 	public int getIdcategoria() {
 		return idcategoria;
 	}
@@ -64,6 +70,9 @@ public class Categorias {
 		this.nombre = nombre;
 	}
 
+
+
+	//TOSTRING
 	@Override
 	public String toString() {
 		String prods="";

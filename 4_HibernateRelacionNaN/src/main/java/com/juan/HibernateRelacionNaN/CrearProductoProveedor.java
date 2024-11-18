@@ -38,11 +38,13 @@ public class CrearProductoProveedor {
             session.save(pepino);
             session.save(endivia);
             transaction.commit();
+
+
             //ahora al reves voy a asignar uno/varios proveedores a un producto
             Productos garbanzos = new Productos("Garbanzos", "D.O. Segovia", 10);
-           session.save(garbanzos);
+            session.save(garbanzos);
 
-           //ahora creo los proveedores
+            //ahora creo los proveedores
             transaction = session.beginTransaction();
             Proveedores rocio = new Proveedores("La Tienda de Rocio", "B78945", "Segovia");
             Proveedores felipe = new Proveedores("Felipe el rey del Huerto", "B4556123", "Leon");
@@ -54,8 +56,8 @@ public class CrearProductoProveedor {
             session.save(felipe);
 
             transaction.commit();
-            session.close();
 
+            session.close();
 
 
         } catch (Exception e) {
