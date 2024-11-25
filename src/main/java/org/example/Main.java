@@ -19,18 +19,19 @@ public class Main {
 
 
         try {
-
-            // Iniciar transaccion
+            //INSERTAR
+            //inicio la transacción
             transaction = session.beginTransaction();
 
+            //creo y guardo un usuario
             User user = new User("juan", "juan", "juan@gmail.com");
             session.save(user);
 
-
+            //creo y guardo un grupo
             Group group = new Group("Profesores");
             session.save(group);
 
-
+            //creo y guaro el grupo y el usuario en los campos de la tabla UserGroup
             UserGroup userGroup = new UserGroup();
             userGroup.setGroup(group);
             userGroup.setUser(user);
@@ -38,9 +39,14 @@ public class Main {
             userGroup.setCuota(300);
 
             session.save(userGroup);
+
+            //finalizo la transacción
             transaction.commit();
 
 
+
+
+            //
             // this user is obtained from the database with ID 1
             transaction = session.beginTransaction();
             user = (User) session.get(User.class, 1);
@@ -48,7 +54,10 @@ public class Main {
             // this group is obtained from the database with ID 14
             group = (Group) session.get(Group.class, 2);
 
-             //añadimos a tabla usuarios grupos
+
+
+
+            //añadimos a tabla UserGroup
             userGroup = new UserGroup();
             userGroup.setGroup(group);
             userGroup.setUser(user);
@@ -60,7 +69,8 @@ public class Main {
 
 
 
-//borrar un registro de la tabla usuarios_grupos
+
+            //BORRAR UN REGISTRO DE LA TABLA usuarios_grupos
             transaction = session.beginTransaction();
             UserGroup usugrup1 = session.get(UserGroup.class, 1);
 
@@ -69,8 +79,9 @@ public class Main {
             transaction.commit();
 
 
-   //BORRAMOS un usuario. Se supone que al ser en cascada me borraria algun registro de la tabla usuarios_grupos
 
+
+            //BORRAMOS UN USUARIO. SE SUPONE QUE AL SER EN CASCADA ME BORRARÁ ALGÚN REGISTRO DE LA TABLA usuarios_grupos
             transaction = session.beginTransaction();
             User user1=session.get(User.class,1);
             session.delete(user1);

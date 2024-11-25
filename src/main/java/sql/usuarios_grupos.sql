@@ -17,6 +17,10 @@ INSERT INTO usuarios (username, password, email)
 VALUES ('Julian', 'Julian', 'Julian@gmail.com'),
        ('Rosa', 'Rosa', 'Rosa@gmail.com'),
        ('Vicente', 'Vicente', 'Vicente@gmail.com');
+
+
+
+
 CREATE TABLE grupos
 (
     group_id integer PRIMARY KEY NOT NULL AUTO_INCREMENT,

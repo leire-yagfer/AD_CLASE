@@ -9,6 +9,8 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Entity
 @Table(name = "usuarios")
 public class User {
+
+	//ATRIBUTOS
 	private int id;
 	private String username;
 	private String password;
@@ -16,6 +18,8 @@ public class User {
 
 	private Set<UserGroup> userGroups = new HashSet<UserGroup>();
 
+
+	//CONSTRUCTOR
 	public User() {
 	}
 
@@ -29,6 +33,8 @@ public class User {
 		this.userGroups.add(group);
 	}
 
+
+	//GETTER Y SETTER
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "user_id")
@@ -77,7 +83,7 @@ public class User {
 	}
 
 	//OJO MUY IMPORTANTEcon el siguiente metodo.
-// Tengo que hacerle para añadir un objeto de tipo usergroup al hashset
+	//Tengo que hacerle para añadir un objeto de tipo usergroup al hashset
 	//si te fijas es igual que en la clase group
 	public void addUserGroup(UserGroup userGroup) {
 
