@@ -1,0 +1,23 @@
+[
+  {
+    "id": 101,
+    "name": "Test 1",
+    "email": "test1@gmail.com",
+    "address": "",
+    "telephone": "121-232-3435"
+  },
+  {
+    "id": 201,
+    "name": "Test 4",
+    "email": "test3@gmail.com",
+    "address": "",
+    "telephone": "343-545-2345"
+  },
+  {
+    "id": 301,
+    "name": "Test 3",
+    "email": "test3@gmail.com",
+    "address": "",
+    "telephone": "876-237-2987"
+  }
+]
