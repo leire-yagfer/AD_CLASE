@@ -14,7 +14,7 @@
 	<name>farming</name>
 	<description>A agricultor and the granjas</description>
 	<properties>
-		<java.version>22</java.version>
+		<java.version>21</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
