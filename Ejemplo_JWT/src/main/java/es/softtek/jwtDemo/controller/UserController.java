@@ -29,6 +29,7 @@ public class UserController {
 
     // public User login(  @PathVariable String username,@PathVariable String pwd)
     public User login(@RequestParam("user") String username, @RequestParam("password") String pwd) {
+                                    //user y password es lo que se pone en el key y value, repectivamente, en el Post
 
         if ((username.equals("juan")) && (pwd.equals("juan"))) {
             System.out.println("Me crea el token");
@@ -49,6 +50,8 @@ public class UserController {
     // y un objeto de GrantedAuthority de Spring que, como veremos más adelante,
     // usaremos para autorizar las peticiones a los recursos protegidos.
 
+
+    //crea el token en hexadecimal con hash
     private String getJWTToken(String username) {
         String secretKey = "mySecretKey";
         List<GrantedAuthority> grantedAuthorities = AuthorityUtils

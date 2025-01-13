@@ -34,9 +34,12 @@ public class JwtDemoApplication {
 			http.csrf().disable()
 				.addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
 				.authorizeRequests()
+					//siempre permitAll porque sino nadie puede hacer login
 				.antMatchers(HttpMethod.POST, "/user").permitAll()//antMatchers OBSOLETO
 					//.requestMatchers(HttpMethod.POST, "/user").permitAll()
-					.antMatchers("/categoria/**").permitAll()
+					//todo el mundo puede acceder a cualquier categoria que cuelgue de categoría (**)
+				.antMatchers("/categoria/**").permitAll()
+					//el resto de recursos están bloqueados
 				.anyRequest().authenticated();//cualquier solicitud debe ser autenticada, de lo contrario, mi aplicación Spring devolverá una respuesta 401.
 
 			/*

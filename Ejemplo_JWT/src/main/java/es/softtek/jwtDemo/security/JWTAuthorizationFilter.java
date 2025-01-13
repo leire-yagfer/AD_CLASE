@@ -20,10 +20,11 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.UnsupportedJwtException;
 
+//clase que se debe copiar y pegar siempre -> utiliza el servidor para comprobar que el token es válido
+
 public class JWTAuthorizationFilter extends OncePerRequestFilter {
 
 	/*
-
 1.- Comprueba la existencia del token (existeJWTToken(...)).
 2.- Si existe, lo desencripta y valida (validateToken(...)).
 3.- Si está todo OK, añade la configuración necesaria al contexto de Spring
