@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS Granja (
                                       idgranja int unsigned NOT NULL AUTO_INCREMENT  PRIMARY KEY,
                                       tamañogranja int NOT NULL,
                                       idagricultor int ,
-                                      FOREIGN KEY (id_Agricultor) REFERENCES Agricultor(id_Agricultor)
+                                      FOREIGN KEY (idagricultor) REFERENCES Agricultor(idagricultor)
 
     ) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1 ;
 
